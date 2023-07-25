@@ -9,7 +9,7 @@ function Add ({ employees, setEmployees, setIsAdding }) {
     const [salary, setSalary] = useState('');
     const [date, setDate] = useState('');
 
-    const textInput = useRef(null);
+    const textInput = useRef(null); //here textInput field is a reference field that is used to refer to the input field in the code
 
     useEffect(() => {
         textInput.current.focus();   //used to auto-focus the textInput field
@@ -17,7 +17,7 @@ function Add ({ employees, setEmployees, setIsAdding }) {
 
 
     const  handleAdd = e => {
-        e.preventDefault();
+      //  e.preventDefault();
         if (!firstName || !lastName || !email || !salary || !date) {
             return Swal.fire({
                 icon: 'error',
@@ -101,7 +101,7 @@ function Add ({ employees, setEmployees, setIsAdding }) {
                     onChange={e => setDate(e.target.value)}
                 />
                 <div style={{ marginTop: '30px' }}>
-                    <input type="submit" value="Add" />
+                    <input style={{backgroundColor:'#835DF4'}} type="submit" value="Add" />
                     <input
                         style={{ marginLeft: '12px' }}
                         className="muted-button"

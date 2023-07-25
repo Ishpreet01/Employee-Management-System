@@ -9,9 +9,9 @@ import Edit from './Edit';
 
 function Dashboard() {
 
-    const [employees, setEmployees] = useState(employeesData);
+    const [employees, setEmployees] = useState(employeesData);  //the initail state gets stored in employees variable and setEmployees is used to update the value of that variable
     const [selectedEmployee, setSelectedEmployee] = useState(null);   //passes the value to the edit component to edit
-    const [isAdding, setIsAdding] = useState(false);
+    const [isAdding, setIsAdding] = useState(false); //initial value of isAdding is false
     const [isEditing, setIsEditing] = useState(false);
 
 
@@ -43,7 +43,7 @@ function Dashboard() {
                     timer: 1500,
                 });
 
-              setEmployees(employees.filter(employee => employee.id !== id));
+              setEmployees(employees.filter(employee => employee.id !== id)); //displays the details of all the employees except the one which we deleted
           
             }
         });
@@ -56,9 +56,10 @@ function Dashboard() {
             {!isAdding && !isEditing && (
                 <>
                     <Header
-                        setIsAdding={setIsAdding}   //these are props
+                        setIsAdding={setIsAdding}   //here setIsAdding is used as a prop to allow the header component to update the state of the parent component and then the updated value gets stored in isAdding variable; props(property) is a mechanism that can be used to pass data from a parent component to the child component
                     />
                     <List
+
                         employees={employees}
                         handleEdit={handleEdit}
                         handleDelete={handleDelete}

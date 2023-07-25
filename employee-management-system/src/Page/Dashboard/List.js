@@ -3,8 +3,8 @@ import React from 'react';
 function List ({ employees, handleEdit, handleDelete }) {
     const formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
-        currency: 'USD',
-        minimumFractionDigits: null
+        currency: 'USD',  //to set the currency to indian rupee set the value to INR
+        minimumFractionDigits: null  //here we can specify a number in order to display the desired number of decimal places
     });
 
     return (

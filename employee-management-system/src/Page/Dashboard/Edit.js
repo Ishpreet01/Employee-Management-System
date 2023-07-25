@@ -12,7 +12,7 @@ function Edit({ employees, selectedEmployee, setEmployees, setIsEditing }) {
     const [date, setDate] = useState(selectedEmployee.date);
 
     const handleUpdate = e => {
-        e.preventDefault();
+      //  e.preventDefault();
 
         if (!firstName || !lastName || !email || !salary || !date) {
             return Swal.fire({
@@ -34,7 +34,7 @@ function Edit({ employees, selectedEmployee, setEmployees, setIsEditing }) {
 
         for (let i = 0; i < employees.length; i++) {
             if (employees[i].id === id) {
-                employees.splice(i, 1, employee);
+                employees.splice(i, 1, employee);  //removes an element starting from index i and removes 1 element starting from i index and adds new element (employee) at its place
                 break;
             }
         }
@@ -69,7 +69,7 @@ function Edit({ employees, selectedEmployee, setEmployees, setIsEditing }) {
                     type="text"
                     name="lastName"
                     value={lastName}
-                    onChange={e => setLastName(e.target.value)}
+                    onChange={e => setLastName(e.target.value)} //onchange is an event atttribute that contains an event handler function
                 />
                 <label htmlFor="email">Email</label>
                 <input
